@@ -1,9 +1,5 @@
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import WordPullUp from "@/components/magicui/word-pull-up";
 import BoxReveal from "@/components/magicui/box-reveal";
-import { useRouter } from "next/navigation";
 import { ButtonRouterPushLoading } from "@/components/home/buttonRouterPushLoading";
 
 export default function Home() {
