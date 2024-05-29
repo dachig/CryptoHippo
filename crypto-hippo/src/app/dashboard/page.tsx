@@ -16,7 +16,7 @@ export default function Dashboard() {
         <TrendingCoins />
         <TrendingNFTs />
       </div>
-      <Suspense>
+      <Suspense fallback="loading">
         <Coins />
       </Suspense>
     </main>

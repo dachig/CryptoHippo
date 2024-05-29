@@ -27,8 +27,8 @@ export function Coin({ coin }: CoinProps) {
             key={coin.id}
             className="text-center p-4 flex flex-col gap-2 hover:cursor-pointer"
           >
-            <h3 className="tracking-right font-semibold text-gray-900">
-              {coin.name} <span className="text-gray-500 font-normal">({coin.symbol})</span>
+            <h3 className="tracking-right font-semibold text-gray-800">
+              {coin.name} <span className="text-gray-400">({coin.symbol})</span>
             </h3>
             <Image
               className="mx-auto"

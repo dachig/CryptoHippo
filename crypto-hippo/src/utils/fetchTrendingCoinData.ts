@@ -1,4 +1,4 @@
-import { TrendingCoinItem } from "./types";
+import { TrendingCoin, TrendingCoinItem } from "./types";
 
 export async function fetchTrendingCoinData() {
   const options = {
@@ -18,7 +18,7 @@ export async function fetchTrendingCoinData() {
   }
   const trendingData = await response.json();
   const trendingCoinItems: TrendingCoinItem[] = trendingData.coins.map(
-    (coin: any) => coin.item
+    (coin: TrendingCoin) => coin.item
   );
   return { trendingCoinItems };
 }

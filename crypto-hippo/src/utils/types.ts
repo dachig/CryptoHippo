@@ -179,6 +179,10 @@ export interface GlobalMarketData {
   };
 }
 
+export interface TrendingCoin {
+  item: TrendingCoinItem;
+}
+
 export interface TrendingCoinItem {
   id: string;
   coin_id: number;

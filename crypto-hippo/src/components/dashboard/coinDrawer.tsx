@@ -23,9 +23,9 @@ export function CoinDrawer({ coin }: CoinDrawerProps) {
         <div className="flex gap-4 items-center">
           <Image src={coin.image} width={50} height={50} alt="coinLogo" />
 
-          <h2 className="text-xl tracking-right font-semibold text-gray-900">
+          <h2 className="text-xl tracking-right font-semibold text-gray-800">
             {coin.name}{" "}
-            <span className="text-gray-500 font-normal">({coin.symbol})</span>{" "}
+            <span className="text-gray-400">({coin.symbol})</span>{" "}
             <Badge variant="default">#{coin.market_cap_rank}</Badge>
           </h2>
         </div>
@@ -50,21 +50,21 @@ export function CoinDrawer({ coin }: CoinDrawerProps) {
 
         <div className="md:w-[400px] flex flex-col gap-2">
           <div className="flex justify-between items-center">
-            <div className="flex gap-2 text-gray-500 items-center">
+            <div className="flex gap-2 text-gray-400 items-center">
               <h3 className="">24h Highest</h3>
             </div>
             <p>{formatCurrency(coin.high_24h, "eur")} </p>
           </div>
           <Separator />
           <div className="flex justify-between gap-2 items-center">
-            <div className="flex gap-2 text-gray-500 items-center">
+            <div className="flex gap-2 text-gray-400 items-center">
               <h3 className="">24h Lowest</h3>
             </div>
             <p>{formatCurrency(coin.low_24h, "eur")}</p>
           </div>
           <Separator />
           <div className="flex justify-between gap-2 items-center">
-            <div className="flex gap-2 text-gray-500 items-center">
+            <div className="flex gap-2 text-gray-400 items-center">
               <h3 className="">All-Time High</h3>
             </div>
             <p className="flex gap-2 items-center">
@@ -77,7 +77,7 @@ export function CoinDrawer({ coin }: CoinDrawerProps) {
           </div>
           <Separator />
           <div className="flex justify-between gap-2 items-center">
-            <div className="flex gap-2 text-gray-500 items-center">
+            <div className="flex gap-2 text-gray-400 items-center">
               <h3 className="">All-Time low</h3>
             </div>
             <p className="flex gap-2 items-center">
@@ -89,13 +89,13 @@ export function CoinDrawer({ coin }: CoinDrawerProps) {
           </div>
           <Separator />
           <div className="flex justify-between gap-2 items-center">
-            <div className="flex gap-2 text-gray-500 items-center">
+            <div className="flex gap-2 text-gray-400 items-center">
               <h3 className="">Market Cap</h3>
               <HoverCard>
                 <HoverCardTrigger>
                   <LuInfo />
                 </HoverCardTrigger>
-                <HoverCardContent className="text-gray-500">
+                <HoverCardContent className="text-gray-400">
                   Market Cap = Current Price x Circulating Supply <br />
                   <br />
                   Refers to the total market value of a cryptocurrency’s
@@ -110,13 +110,13 @@ export function CoinDrawer({ coin }: CoinDrawerProps) {
           </div>
           <Separator />
           <div className="flex justify-between gap-2 items-center">
-            <div className="flex gap-2 text-gray-500 items-center">
+            <div className="flex gap-2 text-gray-400 items-center">
               <h3>Fully Diluted Valuation</h3>
               <HoverCard>
                 <HoverCardTrigger>
                   <LuInfo />
                 </HoverCardTrigger>
-                <HoverCardContent className="text-gray-500">
+                <HoverCardContent className="text-gray-400">
                   Fully Diluted Valuation (FDV) = Current Price x Total Supply{" "}
                   <br />
                   <br />
@@ -135,13 +135,13 @@ export function CoinDrawer({ coin }: CoinDrawerProps) {
           </div>
           <Separator />
           <div className="flex justify-between gap-2 items-center">
-            <div className="flex gap-2 text-gray-500 items-center">
+            <div className="flex gap-2 text-gray-400 items-center">
               <h3>Circulating Supply</h3>
               <HoverCard>
                 <HoverCardTrigger>
                   <LuInfo />
                 </HoverCardTrigger>
-                <HoverCardContent className="text-gray-500">
+                <HoverCardContent className="text-gray-400">
                   The amount of coins that are circulating in the market and are
                   tradeable by the public. It is comparable to looking at shares
                   readily available in the market (not held & locked by
@@ -153,13 +153,13 @@ export function CoinDrawer({ coin }: CoinDrawerProps) {
           </div>
           <Separator />
           <div className="flex justify-between gap-2 items-center">
-            <div className="flex gap-2 text-gray-500 items-center">
+            <div className="flex gap-2 text-gray-400 items-center">
               <h3>Total Supply</h3>
               <HoverCard>
                 <HoverCardTrigger>
                   <LuInfo />
                 </HoverCardTrigger>
-                <HoverCardContent className="text-gray-500">
+                <HoverCardContent className="text-gray-400">
                   The amount of coins that have already been created, minus any
                   coins that have been burned (removed from circulation). It is
                   comparable to outstanding shares in the stock market. <br />
@@ -172,13 +172,13 @@ export function CoinDrawer({ coin }: CoinDrawerProps) {
           </div>
           <Separator />
           <div className="flex justify-between gap-2 items-center">
-            <div className="flex gap-2 text-gray-500 items-center">
+            <div className="flex gap-2 text-gray-400 items-center">
               <h3>Maximum Supply</h3>
               <HoverCard>
                 <HoverCardTrigger>
                   <LuInfo />
                 </HoverCardTrigger>
-                <HoverCardContent className="text-gray-500">
+                <HoverCardContent className="text-gray-400">
                   The maximum number of coins coded to exist in the lifetime of
                   the cryptocurrency. It is comparable to the maximum number of
                   issuable shares in the stock market. <br />
