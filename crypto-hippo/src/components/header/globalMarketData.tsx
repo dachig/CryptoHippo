@@ -12,21 +12,21 @@ export async function GlobalMarketData() {
       <header className="max-w-5xl mx-auto p-4 text-xs">
         <Marquee pauseOnHover className="[--duration:20s]">
           <div className="flex gap-4 flex-wrap">
-            <p className="text-gray-500 flex items-center gap-1">
+            <p className="text-gray-400 flex items-center gap-1">
               Coins:{" "}
-              <span className="text-gray-900 font-semibold">
+              <span className="text-gray-800 font-semibold">
                 {globalMarketData.data.active_cryptocurrencies}
               </span>
             </p>
-            <p className="text-gray-500 flex items-center gap-1">
+            <p className="text-gray-400 flex items-center gap-1">
               Exchanges:{" "}
-              <span className="text-gray-900 font-semibold">
+              <span className="text-gray-800 font-semibold">
                 {globalMarketData.data.markets}
               </span>
             </p>
-            <p className="text-gray-500 flex items-center gap-1">
+            <p className="text-gray-400 flex items-center gap-1">
               Market Cap:{" "}
-              <span className="text-gray-900 font-semibold">
+              <span className="text-gray-800 font-semibold">
                 {formatCurrency(
                   Object.values(globalMarketData.data.total_market_cap).reduce(
                     (acc, v) => acc + v,
@@ -55,9 +55,9 @@ export async function GlobalMarketData() {
                 %
               </span>
             </p>
-            <p className="text-gray-500 flex gap-1">
+            <p className="text-gray-400 flex gap-1">
               Total Volume:{" "}
-              <span className="text-gray-900 font-semibold">
+              <span className="text-gray-800 font-semibold">
                 {formatCurrency(
                   Object.values(globalMarketData.data.total_volume).reduce(
                     (acc, v) => acc + v,
@@ -67,13 +67,13 @@ export async function GlobalMarketData() {
                 )}
               </span>
             </p>
-            <p className="text-gray-500 flex items-center gap-1">
+            <p className="text-gray-400 flex items-center gap-1">
               Dominance:{" "}
-              <span className="text-gray-900 font-semibold mr-3">
+              <span className="text-gray-800 font-semibold mr-3">
                 BTC{" "}
                 {formatNumber(globalMarketData.data.market_cap_percentage.btc)}%
               </span>
-              <span className="text-gray-900 font-semibold">
+              <span className="text-gray-800 font-semibold">
                 ETH{" "}
                 {formatNumber(globalMarketData.data.market_cap_percentage.eth)}%
               </span>
