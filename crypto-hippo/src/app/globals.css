@@ -24,6 +24,7 @@
 }
 body {
   color: rgb(59, 55, 55);
+  font-weight: 600;
 }
 @layer base {
   :root {
