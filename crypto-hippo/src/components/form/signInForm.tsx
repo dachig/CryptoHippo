@@ -42,11 +42,11 @@ const SignInForm = () => {
       password: values.password,
       redirect: false,
     });
-    if (!signInData?.error) {
-      console.log(signInData);
-      router.push("/dashboard");
-    } else {
+    if (signInData?.error) {
       console.log(signInData.error);
+    } else {
+      router.push("/dashboard");
+      router.refresh();
     }
   };
 
