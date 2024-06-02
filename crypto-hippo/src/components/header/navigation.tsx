@@ -9,7 +9,6 @@ import { SignOutButton } from "./signOutButton";
 
 const Navigation = async () => {
   const session = await getServerSession(authOptions);
-  console.log(session);
   return (
     <>
       <nav className="max-w-5xl mx-auto flex gap-4 items-center justify-between py-1">

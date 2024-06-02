@@ -4,14 +4,14 @@ import { ButtonRouterPushLoading } from "@/components/home/buttonRouterPushLoadi
 
 export default function Home() {
   return (
-    <main className="py-24 md:py-36 lg:py-48 2xl:py-64 h-screen relative isolate overflow-hidden">
+    <main className="p-4 py-48 2xl:py-64 h-screen relative isolate overflow-hidden">
       <div className="mx-auto max-w-xl flex flex-col gap-4">
         <WordPullUp
           className="text-center text-4xl md:text-6xl tracking-wide font-extrabold text-primary"
           words=" Crypto Hippo "
         />
         <BoxReveal boxColor={"#5046e6"} duration={0.5}>
-          <h2 className="text-center text-xl text-gray-700">
+          <h2 className="text-center text-lg text-gray-700">
             Browse the latest crypto trends and track your favourite coins to
             stay up-to-date easily!
           </h2>
