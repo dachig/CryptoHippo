@@ -11,7 +11,7 @@ export default function Home() {
           words=" Crypto Hippo "
         />
         <BoxReveal boxColor={"#5046e6"} duration={0.5}>
-          <h2 className="text-center text-lg text-gray-700">
+          <h2 className="text-center text-lg text-gray-600">
             Browse the latest crypto trends and track your favourite coins to
             stay up-to-date easily!
           </h2>

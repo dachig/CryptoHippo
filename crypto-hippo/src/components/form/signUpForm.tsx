@@ -26,12 +26,12 @@ const FormSchema = z
     password: z
       .string()
       .min(1, "Password is required")
-      .min(8, "Password must have than 8 characters"),
+      .min(8, "Password must have more than 8 characters"),
     confirmPassword: z.string().min(1, "Password confirmation is required"),
   })
   .refine((data) => data.password === data.confirmPassword, {
     path: ["confirmPassword"],
-    message: "Password do not match",
+    message: "Passwords do not match",
   });
 
 const SignUpForm = () => {
@@ -55,7 +55,7 @@ const SignUpForm = () => {
       },
       body: JSON.stringify({
         username: values.username,
-        email: values.email,
+        email: values.email.toLocaleLowerCase(),
         password: values.password,
       }),
     });
@@ -64,9 +64,9 @@ const SignUpForm = () => {
       router.push("/sign-in");
     } else {
       toast({
-        title: "Error",
+        title: "Failed to create account",
         description:
-          "Oops! Something went wrong! Perhaps that user already exists.",
+          "Something went wrong, try again.",
         variant: "destructive",
       });
     }

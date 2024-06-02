@@ -25,7 +25,7 @@ export const authOptions: NextAuthOptions = {
           return null;
         }
         const existingUser = await db.user.findUnique({
-          where: { email: credentials.email },
+          where: { email: credentials.email.toLocaleLowerCase() },
         });
         if (!existingUser) {
           return null;

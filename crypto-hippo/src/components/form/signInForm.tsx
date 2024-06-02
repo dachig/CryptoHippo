@@ -1,5 +1,4 @@
 "use client";
-
 import { useForm } from "react-hook-form";
 import {
   Form,
@@ -12,7 +11,6 @@ import {
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "../form/ui/input";
-import { Button } from "../ui/button";
 import Link from "next/link";
 import GoogleSignInButton from "./googleSignInButton";
 import { signIn } from "next-auth/react";
@@ -25,7 +23,7 @@ const FormSchema = z.object({
   password: z
     .string()
     .min(1, "Password is required")
-    .min(8, "Password must have than 8 characters"),
+    .min(8, "Password must have more than 8 characters"),
 });
 
 const SignInForm = () => {
@@ -41,18 +39,19 @@ const SignInForm = () => {
 
   const onSubmit = async (values: z.infer<typeof FormSchema>) => {
     const signInData = await signIn("credentials", {
-      email: values.email,
+      email: values.email.toLocaleLowerCase(),
       password: values.password,
       redirect: false,
     });
     if (signInData?.error) {
       toast({
-        title: "Error",
-        description: "Oops! Something went wrong!",
+        title: "Failed to log in",
+        description: "Wrong username or password!",
         variant: "destructive",
       });
     } else {
       router.push("/dashboard");
+      router.refresh();
       router.refresh();
     }
   };
