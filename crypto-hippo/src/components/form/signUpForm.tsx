@@ -57,16 +57,21 @@ const SignUpForm = () => {
         username: values.username,
         email: values.email.toLocaleLowerCase(),
         password: values.password,
+        favourites: [] as string[],
       }),
     });
 
     if (response.ok) {
+      toast({
+        title: "Succes!",
+        description: `Welcome ${values.username}, your account has succesfully been created!`,
+        variant: "default",
+      });
       router.push("/sign-in");
     } else {
       toast({
         title: "Failed to create account",
-        description:
-          "Something went wrong, try again.",
+        description: "Something went wrong, try again.",
         variant: "destructive",
       });
     }
