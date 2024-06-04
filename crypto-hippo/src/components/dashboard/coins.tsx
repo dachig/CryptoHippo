@@ -22,15 +22,24 @@ export function Coins({ coins, session }: CoinsProps) {
     setFilteredCoins(coinsCpy);
   }
 
+  const handleKeyDown = (e: any) => {
+    if (e.key === "Enter") {
+      search(searchQuery);
+    } else if (e.key === "Escape") {
+      setSearchQuery("");
+    }
+  };
+
   return (
     <div className="max-w-7xl p-4 mx-auto flex flex-col gap-4">
       {" "}
-      <div className="flex ml-auto items-center">
+      <div className="flex max-w-3xl md:ml-auto items-center">
         <Input
+          onKeyDown={handleKeyDown}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="rounded-l-full rounded-r-none "
+          className="rounded-l-full rounded-r-none"
           type="text"
-          placeholder="Search a coin"
+          placeholder="Search"
           value={searchQuery}
         />
 
