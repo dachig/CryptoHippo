@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import * as z from "zod";
-import { toast } from "@/components/ui/use-toast";
 
 const updateFavouritesSchema = z.object({
   email: z.string().min(1, "email is required"),
@@ -38,12 +37,12 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json(
-      { user: updatedUser, message: `${coin} has been successfully removed from your portfolio.` },
+      { user: updatedUser, message: `${coin} has been successfully removed from your portfolio` },
       { status: 200 }
     );
   } catch (error) {
     return NextResponse.json(
-      { message: "You must be signed in to perform this action." },
+      { message: "You must be signed in to perform this action" },
       { status: 500 }
     );
   }

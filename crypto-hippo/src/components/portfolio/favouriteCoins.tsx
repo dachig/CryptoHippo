@@ -1,11 +1,4 @@
-import { fetchCoinData } from "@/utils/fetchCoinData";
-import { getServerSession } from "next-auth";
 import { FavouriteCoin } from "./favouriteCoin";
-
-interface FavouriteCoinsProps {
-  favourites: string[];
-  email: string;
-}
 
 export function FavouriteCoins({ favourites, email }: any) {
   return (

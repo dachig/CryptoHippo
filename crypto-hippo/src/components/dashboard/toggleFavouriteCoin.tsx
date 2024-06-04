@@ -42,14 +42,14 @@ export const ToggleFavouriteCoin = ({
       } else {
         toast({
           title: "Error",
-          description: data.message || "Failed to update favourites.",
+          description: data.message || "Failed to update favourites",
           variant: "destructive",
         });
       }
     } catch (error) {
       toast({
         title: "Error",
-        description: "You must be signed in to perform this action.",
+        description: "You must be signed in to perform this action",
         variant: "destructive",
       });
     } finally {
@@ -73,21 +73,21 @@ export const ToggleFavouriteCoin = ({
       if (response.ok) {
         toast({
           title: "Success",
-          description: `${coin} has been successfully removed from your portfolio.`,
+          description: `${coin} has been successfully removed from your portfolio`,
           variant: "default",
         });
         router.refresh();
       } else {
         toast({
           title: "Error",
-          description: data.message || "Failed to update favourites.",
+          description: data.message || "Failed to update favourites",
           variant: "destructive",
         });
       }
     } catch (error) {
       toast({
         title: "Error",
-        description: "You must be signed in to perform this action.",
+        description: "You must be signed in to perform this action",
         variant: "destructive",
       });
     } finally {

@@ -1,10 +1,9 @@
-import { fetchTrendingCoinData } from "@/utils/fetchTrendingCoinData";
 import { BsFire } from "react-icons/bs";
 import { Card, CardContent, CardTitle } from "../ui/card";
-import { TrendingCoinItem, TrendingNFTItem } from "@/utils/types";
+import {  TrendingNFTItem } from "@/utils/types";
 import Image from "next/image";
 import { Badge } from "../ui/badge";
-import { formatCurrency, formatNumber } from "@/utils/format";
+import {  formatNumber } from "@/utils/format";
 import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/ti";
 import clsx from "clsx";
 import { fetchTrendingNFTData } from "@/utils/fetchTrendingNFTData";

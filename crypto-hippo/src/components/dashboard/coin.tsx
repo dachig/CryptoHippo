@@ -21,7 +21,7 @@ export function Coin({ coin, email }: CoinProps) {
       <Drawer>
         <Card
           key={coin.id}
-          className="text-center p-4 flex flex-col gap-2 hover:cursor-pointer"
+          className="text-center p-4 flex flex-col gap-2 hover:bg-secondary"
         >
           <ToggleFavouriteCoin
             email={email as string}

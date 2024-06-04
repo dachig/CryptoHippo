@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import * as z from "zod";
-import { toast } from "@/components/ui/use-toast";
 
 const updateFavouritesSchema = z.object({
   email: z.string().min(1, "email is required"),
@@ -27,7 +26,7 @@ export async function POST(req: Request) {
     if (favouritesSet.has(coin)) {
       // Coin is already a favourite, remove it
       return NextResponse.json(
-        { message: `${coin} is already in your portfolio.` },
+        { message: `${coin} is already in your portfolio` },
         { status: 500 }
       );
     } else {
@@ -52,7 +51,7 @@ export async function POST(req: Request) {
     );
   } catch (error) {
     return NextResponse.json(
-      { message: "You must be signed in to perform this action." },
+      { message: "You must be signed in to perform this action" },
       { status: 500 }
     );
   }

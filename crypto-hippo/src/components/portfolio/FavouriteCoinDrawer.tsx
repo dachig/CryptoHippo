@@ -1,4 +1,4 @@
-import { CoinById, CoinListItem } from "@/utils/types";
+import { CoinById } from "@/utils/types";
 import Image from "next/image";
 import { TiArrowSortedUp, TiArrowSortedDown } from "react-icons/ti";
 import { clsx } from "clsx";
