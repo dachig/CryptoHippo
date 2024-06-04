@@ -52,7 +52,7 @@ export function MobileNavigation({ session }: any) {
             </div>
           ) : (
             <div className="flex flex-col items-center">
-              <Link className="p-2 hover:bg-secondary" href={`/portfolio`}>
+              <Link  className="p-2 hover:bg-secondary" href={`/portfolio`}>
                 {session?.user.username}'s Portfolio
               </Link>
               <SignOutButton />

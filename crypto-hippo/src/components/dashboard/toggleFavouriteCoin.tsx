@@ -1,8 +1,9 @@
 "use client";
-import {  useState } from "react";
+import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import ClipLoader from "react-spinners/ClipLoader";
 import { StarIcon } from "./starIcon";
+import { usePathname, useRouter } from "next/navigation";
 
 interface ToggleFavouriteCoinProps {
   email: string;
@@ -14,6 +15,8 @@ export const ToggleFavouriteCoin = ({
   coin,
 }: ToggleFavouriteCoinProps) => {
   const { toast } = useToast();
+  const router = useRouter();
+  const pathname = usePathname();
   const [loading, setLoading] = useState(false);
 
   const toggleFavourite = async () => {
@@ -35,6 +38,7 @@ export const ToggleFavouriteCoin = ({
           description: "Favourites updated successfully.",
           variant: "default",
         });
+        router.refresh();
       } else {
         toast({
           title: "Error",
@@ -65,7 +69,11 @@ export const ToggleFavouriteCoin = ({
           data-testid="loader"
         />
       ) : (
-        <StarIcon toggleFavourite={toggleFavourite}/>
+        <StarIcon
+          pathname={pathname}
+          coinId={coin}
+          toggleFavourite={toggleFavourite}
+        />
       )}
     </>
   );

@@ -1,4 +1,3 @@
-import { CoinListItem } from "@/utils/types";
 import { Card } from "../ui/card";
 import Image from "next/image";
 import {
@@ -9,15 +8,18 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Button } from "../ui/button";
-import { CoinDrawer } from "./coinDrawer";
-import { ToggleFavouriteCoin } from "./toggleFavouriteCoin";
+import { FavouriteCoinDrawer } from "./FavouriteCoinDrawer";
+import { ToggleFavouriteCoin } from "../dashboard/toggleFavouriteCoin";
+import { fetchCoinDataById } from "@/utils/fetchCoinDataById";
 
 interface CoinProps {
-  coin: CoinListItem;
   email: string;
+  favouriteCoinId: string;
 }
-export function Coin({ coin, email }: CoinProps) {
+export async function FavouriteCoin({ email, favouriteCoinId }: CoinProps) {
+  const coin = await fetchCoinDataById(favouriteCoinId);
   return (
+
       <Drawer>
         <Card
           key={coin.id}
@@ -27,14 +29,14 @@ export function Coin({ coin, email }: CoinProps) {
             email={email as string}
             coin={coin.id as string}
           />
-          <DrawerTrigger>
+          <DrawerTrigger className="">
             {" "}
             <h3 className="tracking-right font-semibold text-gray-800 mb-4">
               {coin.name} <span className="text-gray-400">({coin.symbol})</span>
             </h3>
             <Image
               className="mx-auto"
-              src={coin.image}
+              src={coin.image.large}
               width={200}
               height={200}
               alt="coinLogo"
@@ -43,7 +45,7 @@ export function Coin({ coin, email }: CoinProps) {
         </Card>
 
         <DrawerContent className="max-w-lg mx-auto">
-          <CoinDrawer coin={coin} />
+          <FavouriteCoinDrawer coin={coin} />
           <DrawerFooter>
             <DrawerClose>
               <Button variant="outline">Close</Button>

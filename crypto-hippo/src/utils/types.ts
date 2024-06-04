@@ -289,3 +289,67 @@ export interface TrendingNFTItem {
     content: string | null;
   };
 }
+
+export interface CoinById {
+  id: string;
+  name: string;
+  symbol: string;
+  image: {
+    thumb: string;
+    small: string;
+    large: string;
+  };
+  market_cap_rank: string;
+  market_data: {
+    current_price: {
+      eur: number;
+      usd: number;
+      cad: number;
+    };
+    high_24h: {
+      eur: number;
+      usd: number;
+      cad: number;
+    };
+    low_24h: {
+      eur: number;
+      usd: number;
+      cad: number;
+    };
+    ath: {
+      eur: number;
+      usd: number;
+      cad: number;
+    };
+    ath_change_percentage: {
+      eur: number;
+      usd: number;
+      cad: number;
+    };
+    atl: {
+      eur: number;
+      usd: number;
+      cad: number;
+    };
+    atl_change_percentage: {
+      eur: number;
+      usd: number;
+      cad: number;
+    };
+    market_cap: {
+      eur: number;
+      usd: number;
+      cad: number;
+    };
+    fully_diluted_valuation: {
+      eur: number;
+      usd: number;
+      cad: number;
+    };
+    price_change_24h: number;
+    price_change_percentage_24h: number;
+    total_supply: number;
+    max_supply: number;
+    circulating_supply: number;
+  };
+}
