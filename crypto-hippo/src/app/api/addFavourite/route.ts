@@ -26,7 +26,10 @@ export async function POST(req: Request) {
     const favouritesSet = new Set(user.favourites);
     if (favouritesSet.has(coin)) {
       // Coin is already a favourite, remove it
-      favouritesSet.delete(coin);
+      return NextResponse.json(
+        { message: `${coin} is already in your portfolio.` },
+        { status: 500 }
+      );
     } else {
       // Coin is not a favourite, add it
       favouritesSet.add(coin);
@@ -41,7 +44,10 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json(
-      { user: updatedUser, message: "Favourites updated successfully" },
+      {
+        user: updatedUser,
+        message: `${coin} has been successfully added to your favourites!`,
+      },
       { status: 200 }
     );
   } catch (error) {

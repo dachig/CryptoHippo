@@ -19,10 +19,10 @@ export const ToggleFavouriteCoin = ({
   const pathname = usePathname();
   const [loading, setLoading] = useState(false);
 
-  const toggleFavourite = async () => {
+  const addFavourite = async () => {
     setLoading(true);
     try {
-      const response = await fetch("/api/favourite", {
+      const response = await fetch("/api/addFavourite", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -35,7 +35,45 @@ export const ToggleFavouriteCoin = ({
       if (response.ok) {
         toast({
           title: "Success",
-          description: "Favourites updated successfully.",
+          description: `${coin} has been successfully added to your favourites!`,
+          variant: "default",
+        });
+        router.refresh();
+      } else {
+        toast({
+          title: "Error",
+          description: data.message || "Failed to update favourites.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "You must be signed in to perform this action.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const deleteFavourite = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch("/api/deleteFavourite", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, coin }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast({
+          title: "Success",
+          description: `${coin} has been successfully removed from your portfolio.`,
           variant: "default",
         });
         router.refresh();
@@ -72,7 +110,9 @@ export const ToggleFavouriteCoin = ({
         <StarIcon
           pathname={pathname}
           coinId={coin}
-          toggleFavourite={toggleFavourite}
+          toggleFavourite={
+            pathname == "/portfolio" ? deleteFavourite : addFavourite
+          }
         />
       )}
     </>

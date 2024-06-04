@@ -63,8 +63,8 @@ const SignUpForm = () => {
 
     if (response.ok) {
       toast({
-        title: "Succes!",
-        description: `Welcome ${values.username}, your account has succesfully been created!`,
+        title: "Account created succesfully!",
+        description: `Welcome to Crypto Hippo, ${values.username}! your account has been created succesfully!`,
         variant: "default",
       });
       router.push("/sign-in");

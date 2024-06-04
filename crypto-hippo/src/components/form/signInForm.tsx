@@ -53,6 +53,11 @@ const SignInForm = () => {
       router.push("/dashboard");
       router.refresh();
       router.refresh();
+      toast({
+        title: `Welcome back!`,
+        description: `Oh boy, have we missed you!`,
+        variant: "default",
+      });
     }
   };
 
